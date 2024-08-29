@@ -47,15 +47,15 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateContent(letter, number, type) {
         if (type === 'alphabet') {
             const imageUrl = `images/${letter}.jpg`;
-            const videoUrl = `images/Auslan.mp4`;
+            const videoUrl = `images/${letter}.mp4`;
             
             selectedImageAlphabet.src = imageUrl;
             selectedImageAlphabet.style.display = 'block';
             videoLinkAlphabet.innerHTML = `<iframe width="560" height="315" src="${videoUrl}" frameborder="0" allowfullscreen></iframe>`;
             contentAlphabet.style.display = 'block';            
         } else if (type === 'numbers') {
-            const imageUrl = `images/${number}.jpg`;
-            const videoUrl = `images/Auslan.mp4`;
+            const imageUrl = `images/numberTable.jpg`;
+            const videoUrl = `images/${number}.mp4`;
 
             selectedImageNumbers.src = imageUrl;
             selectedImageNumbers.style.display = 'block';
