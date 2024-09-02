@@ -77,3 +77,66 @@ body, html {
 #video-link-alphabet iframe, #video-link-numbers iframe {
     height: 300px;
 }
+
+/* Constant blue glow for all tabs */
+.blue-glow {
+    box-shadow: 0px 0px 10px #00bfff;
+}
+
+/* Pulsating blue glow for the first tab to complete */
+.pulsating-glow {
+    animation: pulsating-glow 1.5s infinite;
+    box-shadow: 0px 0px 20px #00bfff, 0px 0px 30px #00bfff;
+}
+
+@keyframes pulsating-glow {
+    0% { box-shadow: 0 0 5px #00bfff, 0 0 10px #00bfff; }
+    50% { box-shadow: 0 0 20px #00bfff, 0 0 30px #00bfff; }
+    100% { box-shadow: 0 0 5px #00bfff, 0 0 10px #00bfff; }
+}
+
+.active-lesson {
+    background-color: #00bfff;
+    color: white;
+    border: 2px solid #00bfff;
+    transform: scale(1.1);
+    animation: glowing-lesson 1.5s infinite;
+}
+
+/* Static blue glow for completed lessons */
+.completed-lesson {
+    box-shadow: 0px 0px 10px #00bfff;
+}
+
+@keyframes glowing-lesson {
+    0% { box-shadow: 0 0 5px #00bfff, 0 0 10px #00bfff; }
+    50% { box-shadow: 0 0 20px #00bfff, 0 0 30px #00bfff; }
+    100% { box-shadow: 0 0 5px #00bfff, 0 0 10px #00bfff; }
+}
+
+.test-hand-sign-container {
+    margin-top: 20px;
+    text-align: center;
+    padding: 10px; /* Add padding for better spacing */
+}
+
+.test-hand-sign-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #00bfff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.test-hand-sign-button:hover {
+    background-color: #0099cc;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
