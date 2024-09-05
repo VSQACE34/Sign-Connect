@@ -1,0 +1,98 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUSLAN Lessons - Robotic Theme</title>
+    <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+
+    <h1>Welcome to AUSLAN Lessons</h1>
+    <p>The lessons are divided into five levels, each increasing in complexity. Complete each level to unlock the next.</p>
+
+    <!-- Level 1: Numbers 0-9 -->
+    <div class="level-container glowing" onclick="toggleContent(1)">
+        <div class="toggle-btn">&#9654;</div>
+        <div class="tooltip">Press this to expand the content</div>
+        <div class="level">
+            <h2>Chapter 1: Numbers (1-9)</h2>
+        </div>
+    </div>
+    <div class="content" id="content-1">
+        <div id="block-1" class="block active" onclick="showPopup(1, event)">1</div>
+        <div id="block-2" class="block disabled">2</div>
+        <div id="block-3" class="block disabled">3</div>
+        <div id="block-4" class="block disabled">4</div>
+        <div id="block-5" class="block disabled">5</div>
+        <div id="block-6" class="block disabled">6</div>
+        <div id="block-7" class="block disabled">7</div>
+        <div id="block-8" class="block disabled">8</div>
+        <div id="block-9" class="block disabled">9</div>
+    </div>
+
+    <!-- Level 2: Letters A-K -->
+    <div class="level-container" onclick="toggleContent(2)">
+        <div class="toggle-btn">&#9654;</div>
+        <div class="tooltip">Press this to expand the content</div>
+        <div class="level">
+            <h2>Chapter 2: Letters (A-K)</h2>
+        </div>
+    </div>
+    <div class="content" id="content-2">
+        <div id="block-A" class="block disabled" onclick="showDisclaimer(event)">A</div>
+        <div id="block-B" class="block disabled" onclick="showDisclaimer(event)">B</div>
+        <div id="block-C" class="block disabled" onclick="showDisclaimer(event)">C</div>
+        <div id="block-D" class="block disabled" onclick="showDisclaimer(event)">D</div>
+        <div id="block-E" class="block disabled" onclick="showDisclaimer(event)">E</div>
+        <div id="block-F" class="block disabled" onclick="showDisclaimer(event)">F</div>
+        <div id="block-G" class="block disabled" onclick="showDisclaimer(event)">G</div>
+        <div id="block-H" class="block disabled" onclick="showDisclaimer(event)">H</div>
+        <div id="block-I" class="block disabled" onclick="showDisclaimer(event)">I</div>
+        <div id="block-J" class="block disabled" onclick="showDisclaimer(event)">J</div>
+        <div id="block-K" class="block disabled" onclick="showDisclaimer(event)">K</div>
+    </div>
+
+    <!-- Level 3: Letters L-Z -->
+    <div class="level-container" onclick="toggleContent(3)">
+        <div class="toggle-btn">&#9654;</div>
+        <div class="tooltip">Press this to expand the content</div>
+        <div class="level">
+            <h2>chapter 3: Letters (L-Z)</h2>
+        </div>
+    </div>
+    <div class="content" id="content-3">
+        <div id="block-L" class="block disabled" onclick="showDisclaimer(event)">L</div>
+        <div id="block-M" class="block disabled" onclick="showDisclaimer(event)">M</div>
+        <div id="block-N" class="block disabled" onclick="showDisclaimer(event)">N</div>
+        <div id="block-O" class="block disabled" onclick="showDisclaimer(event)">O</div>
+        <div id="block-P" class="block disabled" onclick="showDisclaimer(event)">P</div>
+        <div id="block-Q" class="block disabled" onclick="showDisclaimer(event)">Q</div>
+        <div id="block-R" class="block disabled" onclick="showDisclaimer(event)">R</div>
+        <div id="block-S" class="block disabled" onclick="showDisclaimer(event)">S</div>
+        <div id="block-T" class="block disabled" onclick="showDisclaimer(event)">T</div>
+        <div id="block-U" class="block disabled" onclick="showDisclaimer(event)">U</div>
+        <div id="block-V" class="block disabled" onclick="showDisclaimer(event)">V</div>
+        <div id="block-W" class="block disabled" onclick="showDisclaimer(event)">W</div>
+        <div id="block-X" class="block disabled" onclick="showDisclaimer(event)">X</div>
+        <div id="block-Y" class="block disabled" onclick="showDisclaimer(event)">Y</div>
+        <div id="block-Z" class="block disabled" onclick="showDisclaimer(event)">Z</div>
+    </div>
+
+    <!-- Disclaimer Message -->
+    <div class="disclaimer" id="disclaimer">
+        You can't access this level until you complete the previous level.
+    </div>
+
+    <!-- Popup for Learning Material -->
+    <div class="popup" id="popup">
+        <span class="close-btn" onclick="closePopup()">X</span>
+        <img id="sign-image" src="" alt="Sign Image">
+        <video id="sign-video" controls>
+            <source src="" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <button id="test-sign" class="disabled" onclick="testSign()">Test Your Sign Accuracy</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

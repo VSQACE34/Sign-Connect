@@ -1,0 +1,251 @@
+body { 
+    font-family: 'Arial', sans-serif; 
+    margin: 20px; 
+    background-color: #FFFFFF; 
+    color: #e0e0e0; 
+    text-shadow: 0px 0px 8px #00bbff;
+}
+
+h1 {
+    width: 100%;
+    height: 300px;
+    background-image: url('images/Course.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+h2 {
+    text-align: center;
+    font-size: 3em;
+    color: #00bbff;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+p {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    color: #a0a0a0;
+}
+
+.level-container { 
+    display: flex; 
+    align-items: center; 
+    cursor: pointer; 
+    background-color: #117fce; 
+    border: 2px solid #117fce; 
+    border-radius: 8px;
+    margin-bottom: 10px; 
+    padding: 10px 15px;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 0px 12px #117fce;
+    position: relative; /* Make the level container the reference point for the tooltip */
+}
+
+.level-container.disabled {
+    opacity: 0.6;
+    border-color: #666;
+    box-shadow: none;
+}
+
+.level-container:hover {
+    background-color: #444;
+    box-shadow: 0px 0px 16px #00ff99;
+}
+
+.level h2 { 
+    margin: 0; 
+    font-size: 1.8em; 
+    color: #00ff99; 
+    transition: color 0.3s ease;
+}
+
+.toggle-btn { 
+    margin-right: 10px; 
+    cursor: pointer; 
+    font-size: 2em; 
+    color: #00ff99; 
+    transition: transform 0.3s ease, color 0.3s ease; 
+    position: relative; /* Position the toggle button relative to allow correct tooltip positioning */
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    background-color: #00ff99;
+    color: #1b1b1b;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    z-index: 1002;
+    white-space: nowrap;
+    box-shadow: 0 0 10px #00ff99;
+    bottom: 100%; /* Position the tooltip above the triangle */
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px); /* Center it horizontally and slightly offset vertically */
+}
+
+.content { 
+    display: none; 
+    margin-top: 10px; 
+    padding-left: 28px; 
+    border-left: 3px solid #ffffff; 
+    padding-top: 15px;
+}
+
+.block { 
+    display: inline-block; 
+    width: 60px; 
+    height: 60px; 
+    margin: 10px; 
+    text-align: center; 
+    line-height: 60px; 
+    font-weight: bold; 
+    cursor: pointer; 
+    border-radius: 50%; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
+    transition: all 0.3s ease;
+    background: radial-gradient(circle, #333, #000);
+    color: #00ff99;
+    border: 2px solid #00ff99;
+}
+
+.block.disabled { 
+    background-color: #8b0000; 
+    cursor: not-allowed; 
+    color: #ffcccc;
+    border: 2px solid #ff3333;
+}
+
+.block.active { 
+    background-color: #005f5f; 
+    color: #00ff99; 
+    border: 2px solid #00ff99;
+}
+
+.block.completed { 
+    background-color: #228b22; 
+    color: #00ff99; 
+    transform: scale(1.1);
+    box-shadow: 0 0 8px #00ff99, 0 0 16px #00ff99;
+}
+
+.block:hover:not(.disabled) { 
+    background-color: #006666; 
+    border-color: #00ff99;
+}
+
+.popup { 
+    display: none; 
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    width: 320px; 
+    background-color: #222; 
+    padding: 20px; 
+    box-shadow: 0 0 20px #00ff99; 
+    border-radius: 10px; 
+    z-index: 1000; 
+    animation: fadeIn 0.3s ease;
+    border: 2px solid #00ff99;
+}
+
+.popup img, 
+.popup video { 
+    width: 100%; 
+    border-radius: 8px; 
+    margin-bottom: 10px; 
+}
+
+.popup button { 
+    margin-top: 10px; 
+    padding: 10px; 
+    width: 100%; 
+    cursor: pointer; 
+    background-color: #00ff99; 
+    color: black; 
+    border: none; 
+    border-radius: 5px; 
+    font-size: 1em; 
+    transition: background-color 0.3s ease; 
+}
+
+.popup button.disabled { 
+    background-color: #666; 
+    cursor: not-allowed; 
+    color: #ccc;
+}
+
+.popup button:not(.disabled):hover { 
+    background-color: #009966; 
+}
+
+.close-btn { 
+    position: absolute; 
+    top: 10px; 
+    right: 10px; 
+    cursor: pointer; 
+    font-weight: bold; 
+    font-size: 18px; 
+    color: #ff3333; 
+    transition: color 0.3s ease; 
+}
+
+.close-btn:hover { 
+    color: #ff6666; 
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.disclaimer {
+    display: none;
+    position: absolute;
+    background-color: #ff3333;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    z-index: 1001;
+    animation: fadeIn 0.3s ease;
+}
+
+.disclaimer::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #ff3333 transparent transparent transparent;
+}
+
+/* Glowing effect for active elements */
+.glowing {
+    animation: glowing 1.5s infinite;
+}
+
+@keyframes glowing {
+    0% { box-shadow: 0 0 5px #00b3ff, 0 0 10px #00b3ff; }
+    50% { box-shadow: 0 0 20px #00b3ff, 0 0 30px #00b3ff; }
+    100% { box-shadow: 0 0 5px #00b3ff, 0 0 10px #00b3ff; }
+}
